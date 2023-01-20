@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Patronage app</title>
+  </head>
+  <body>
+    <main>
+      <nav class="menu">
+        <ul class="menu__item">
+          <li class="menu__list">
+            <a href="./register.html" class="menu__list-item">
+              Zarejestruj się
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <section class="login">
+        <h1 class="login__heading">Formularz logowania</h1>
+        <form action="#" class="login__form">
+          <div>
+            <label for=""> adres Email </label>
+            <input
+              id="email"
+              type="email"
+              class="input"
+              value=""
+              placeholder="Email"
+            />
+          </div>
+          <div>
+            <label for=""> Hasło</label>
+            <input
+              id="password"
+              type="password"
+              class="input"
+              value=""
+              placeholder="Hasło"
+            />
+          </div>
+          <span id="errorMessageLogin"></span>
+          <button id="loginBtn" class="login__btn btn">Zaloguj</button>
+        </form>
+      </section>
+    </main>
+    <script src="../js/login.js"></script>
+  </body>
+</html>

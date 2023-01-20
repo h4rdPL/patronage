@@ -1,0 +1,302 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body {
+  font-family: "Open Sans";
+  font-size: 16px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.icon {
+  width: 30px;
+}
+/* components */
+.input {
+  padding: 0.8rem;
+  border-radius: 25px;
+  border: 1px solid #000;
+}
+
+.btn {
+  padding: 0.7rem 2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  border: none;
+  background: linear-gradient(
+    90deg,
+    rgba(244, 67, 54, 1) 0%,
+    rgba(255, 193, 7, 1) 100%
+  );
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.btn:hover {
+  box-shadow: 2px 2px 14px 0px rgba(66, 68, 90, 1);
+}
+/* index html  */
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
+  background-color: #aaaaaa10;
+}
+
+.menu__item {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  min-width: 100%;
+}
+.menu__item-app {
+  justify-content: flex-end;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  min-height: 100vh;
+  flex-direction: column;
+  padding: 4rem;
+  background-color: #ededed;
+}
+img {
+  max-width: 100%;
+}
+.header__heading {
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    font-size: 1.2rem;
+  }
+  img {
+    width: 50%;
+  }
+}
+
+/* login */
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 86px);
+  background-image: url("../assets/form-bg.svg");
+  background-size: 35%;
+  background-repeat: no-repeat;
+  background-position: 2% 95%;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 300px;
+  max-width: 80%;
+}
+
+.login__heading {
+  margin-bottom: 1.5rem;
+}
+
+.login__btn {
+  align-self: flex-end;
+}
+
+form > * {
+  align-self: flex-end;
+}
+
+/* app */
+
+.app {
+  height: calc(100vh -86px);
+  background-color: #ededed;
+  text-align: center;
+}
+.app__charts {
+  min-height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel__track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel__slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.current-slide {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+.current-slide {
+  transform: translateX(0%);
+}
+
+.carousel__slide:not(.current-slide) {
+  transform: translateX(-100%);
+}
+.app__history {
+  overflow-y: scroll;
+  height: 50vh;
+  background-color: #fff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding-top: 20px;
+}
+
+.transactions__single {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  text-align: left;
+  margin-bottom: 2rem;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.transactions__add {
+  width: 32px;
+  background-color: red;
+}
+
+.transactions__icon {
+  grid-column: 1/2;
+}
+
+.transactions__visible {
+  grid-column: 1/2;
+  grid-row: 1/-1;
+}
+
+.transactions__type {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.transactions__description {
+  grid-row: 1/2;
+  grid-column: 2/4;
+}
+.transactions__amount {
+  grid-column: 4/5;
+  grid-row: 1/2;
+}
+.transactions__balance {
+  grid-column: 4/5;
+  grid-row: 2/3;
+}
+
+.transactions__type {
+  grid-column: 1/-1;
+  grid-row: 2/3;
+}
+
+.app__charts {
+  overflow-x: auto;
+}
+
+.app__charts__first {
+  min-width: 100%;
+}
+
+.app__charts__second {
+  min-width: 100%;
+}
+.chart {
+  display: flex;
+  gap: 3.5rem;
+  justify-content: center;
+  align-items: center;
+  max-height: 350px;
+  width: 80%;
+  padding-left: 7rem;
+}
+.transactions__hidden {
+  grid-column: 3/5;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  display: none;
+}
+
+/* desktop view  */
+@media (min-width: 768px) {
+  .chart {
+    min-width: 100%;
+    padding-left: 0rem;
+  }
+  .transactions__hidden {
+    grid-column: 1/2;
+    flex-direction: row;
+    display: flex;
+  }
+
+  .transactions__add {
+    display: none;
+  }
+  .app__charts__first {
+    min-width: auto;
+  }
+
+  .app__charts__second {
+    min-width: auto;
+  }
+  .login {
+    background-size: 10%;
+  }
+  .header {
+    background-image: url("../assets/dashed.svg");
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-position: 20% 35%;
+  }
+}
+
+/* helper class */
+
+.active {
+  display: flex;
+}
+
+.error {
+  font-size: 0.8rem;
+  color: red;
+  font-weight: bold;
+}

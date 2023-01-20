@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Patronage app</title>
+  </head>
+  <body>
+    <main>
+      <nav class="menu">
+        <ul class="menu__item">
+          <li class="menu__list">
+            <a href="./login.html" class="menu__list-item"> Zaloguj się </a>
+          </li>
+        </ul>
+      </nav>
+      <section class="login">
+        <h1 class="login__heading">Formularz rejestracji</h1>
+        <form action="#" class="login__form">
+          <div>
+            <label for=""> Nazwa użytkownika </label>
+            <input
+              id="username"
+              type="text"
+              class="input"
+              placeholder="Nazwa użytkownika"
+              value=""
+              autocomplete="off"
+              required
+            />
+          </div>
+          <span class="error" id="usernameError"></span>
+          <div>
+            <label for=""> Hasło </label>
+            <input
+              id="password"
+              type="password"
+              class="input"
+              placeholder="Hasło"
+              value=""
+              autocomplete="off"
+              required
+            />
+          </div>
+          <span class="error" id="passwordError"></span>
+
+          <div>
+            <label for="">Adres email </label>
+            <input
+              id="email"
+              type="email"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              class="input"
+              placeholder="Email"
+              value=""
+              autocomplete="off"
+              required
+            />
+          </div>
+          <span class="error" id="emailError"></span>
+          <div>
+            <label for="">Powtórz adres email </label>
+            <input
+              id="repeatEmail"
+              type="email"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              class="input"
+              placeholder="Potwierdź email"
+              value=""
+              autocomplete="off"
+              required
+            />
+          </div>
+          <span class="error" id="repeatedEmailError"></span>
+
+          <span class="error" id="errorMessage"> </span>
+          <button id="register" class="login__btn btn">Zarejestruj</button>
+        </form>
+      </section>
+    </main>
+    <script src="../js/register.js"></script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Patronage app</title>
+  </head>
+  <body>
+    <main>
+      <nav class="menu">
+        <ul class="menu__item menu__item-app">
+          <li id="usernameDisplay"></li>
+          <li class="menu__list">
+            <a id="logout" class="menu__item-logout">Wyloguj się</a>
+          </li>
+        </ul>
+      </nav>
+      <section class="app">
+        <div class="app__charts">
+          <div class="chart">
+            <canvas class="app__charts__first" id="chart"></canvas>
+            <canvas class="app__charts__second slide" id="myChart"></canvas>
+          </div>
+        </div>
+        <div class="app__history">
+          <div id="transactions" class="transactions"></div>
+        </div>
+      </section>
+    </main>
+    <!-- chartjs library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/app.js"></script>
+  </body>
+</html>
